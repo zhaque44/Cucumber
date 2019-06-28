@@ -1,6 +1,6 @@
 # Amazon Shopping Cart 
 
-This exercise is a basic walkthrough for testing the Amazon website using Cucumber with Watir. These tests will be using the Page Object Model design pattern. We will create separate Class for each page on Amazon. This is going to help us interact with the HTML elements on each page. 
+This exercise is a basic walkthrough for testing the Amazon website using Cucumber and Watir. These tests will be using the Page Object Model design pattern. We will create separate Class for each page on Amazon. This is going to help us interact with the HTML elements on each page. 
 
 # Installation 
 
@@ -35,8 +35,7 @@ A list of gems installed will appear, also at the base directory level you will 
 
 Once you have ran the installation steps successfully, you are now able to run the test suite. I used Rake to write a test task that will execute the tests from the command line. I created a Rakefile which is where the test task is defined:
 
-```
-ruby
+```ruby
 Cucumber::Rake::Task.new(:tests) do |t|
   t.cucumber_opts = "features --color --format pretty -f html -o cucumber.html"
 end
@@ -51,6 +50,17 @@ Then we utilize the *cucumber_opts* accessor to define the arguments that are be
 *f:* format output formatters for HTML 
 Then *end* the block of code
 
+You can run the tests:
+
+```
+rake tests
+```
+
+During runtime of the test a screenshot will be taken of a page with Amazon products, that will be saved at the base directory level:
+
+```
+catcup.png
+```
 
 # Test Metrics
 
